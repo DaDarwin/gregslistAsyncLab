@@ -42,8 +42,9 @@ export class HouseController{
 }
 
     async removeHouse(id){
+        console.log(id)
         try{await houseService.removeHouse(id)
-        Pop.toast('Car Deleted')}
+        Pop.toast('House Deleted')}
         catch(error){console.log(error)}
     }
 

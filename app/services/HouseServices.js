@@ -1,6 +1,5 @@
 import { AppState } from "../AppState.js"
 import { House } from "../models/House.js"
-import { loadState, saveState } from "../utils/Store.js"
 import { api } from "./AxiosService.js"
 
 
@@ -14,13 +13,15 @@ class HouseService{
         AppState.houses = houses
     }
 
-    async addHouse(){
-        const response =await api.post('api/houses', FormData)
-        AppState.houses.push(new House(response.data))
+    async addHouse(formData){
+        const response = await api.post('api/houses', formData)
+        const newHouse = (new House(response.data))
+        console.log(newHouse)
+        AppState.houses.push(newHouse)
     }
 
     async removeHouse(id){
-        const response = await api.delete(`api/cars/${id}`)
+        await api.delete(`api/houses/${id}`)
         const ind = AppState.houses.findIndex(house => house.id == id)
         AppState.houses.splice(ind, 1)
     }
