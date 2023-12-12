@@ -2,14 +2,14 @@
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.preferences.importModuleSpecifierEnding": "js",
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#6fdc44",
-    "activityBar.background": "#6fdc44",
+    "activityBar.activeBackground": "#90e46f",
+    "activityBar.background": "#90e46f",
     "activityBar.foreground": "#15202b",
     "activityBar.inactiveForeground": "#15202b99",
     "activityBarBadge.background": "#5e83e1",
     "activityBarBadge.foreground": "#15202b",
     "commandCenter.border": "#15202b99",
-    "sash.hoverBorder": "#6fdc44",
+    "sash.hoverBorder": "#90e46f",
     "statusBar.background": "#6fdc44",
     "statusBar.debuggingBackground": "#b144dc",
     "statusBar.debuggingForeground": "#e7e7e7",
@@ -20,7 +20,14 @@
     "titleBar.activeBackground": "#6fdc44",
     "titleBar.activeForeground": "#15202b",
     "titleBar.inactiveBackground": "#6fdc4499",
-    "titleBar.inactiveForeground": "#15202b99"
+    "titleBar.inactiveForeground": "#15202b99",
+    "editorGroup.border": "#90e46f",
+    "panel.border": "#90e46f",
+    "sideBar.border": "#90e46f",
+    "statusBar.border": "#6fdc44",
+    "statusBar.debuggingBorder": "#b144dc",
+    "tab.activeBorder": "#90e46f",
+    "titleBar.border": "#6fdc44"
   },
   "peacock.color": "#6fdc44",
 }

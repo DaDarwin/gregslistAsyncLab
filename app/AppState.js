@@ -58,6 +58,8 @@ class ObservableAppState extends EventEmitter {
       }
     )
   ]
+
+  houses = []
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

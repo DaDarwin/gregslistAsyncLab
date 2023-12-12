@@ -90,22 +90,27 @@ export class Router {
   }
 
   async handleView() {
-    const currentRoute = this.currentRoute
-    if (currentRoute.view) {
-      await currentRoute.loadTemplate()
-      let template = currentRoute.template || currentRoute.view
-      const target = document.querySelector(currentRoute.target)
-      if (!target) { throw new Error('Unable to mount view') }
-      target.innerHTML = template
+    try{
+
+      const currentRoute = this.currentRoute
+      if (currentRoute.view) {
+        await currentRoute.loadTemplate()
+        let template = currentRoute.template || currentRoute.view
+        const target = document.querySelector(currentRoute.target)
+        if (!target) { throw new Error('Unable to mount view') }
+        target.innerHTML = template
+      }
+      this.fromRoute?.controllers.forEach(c => {
+        // @ts-ignore
+        delete app[c.name]
+      })
+      currentRoute.controllers.forEach(c => {
+        // @ts-ignore
+        app[c.name] = new c()
+      })
+    } catch (error){
+      console.error(error)
     }
-    this.fromRoute?.controllers.forEach(c => {
-      // @ts-ignore
-      delete app[c.name]
-    })
-    currentRoute.controllers.forEach(c => {
-      // @ts-ignore
-      app[c.name] = new c()
-    })
-  }
+    }
 
 }
